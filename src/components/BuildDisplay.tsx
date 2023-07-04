@@ -6,7 +6,7 @@ import TableHead from "@mui/material/Table";
 import TableRow from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 
-const BuildDisplay = () => {
+function BuildDisplay() {
   return (
     <Container>
       <h1>Builds by Category</h1>
@@ -38,6 +38,6 @@ const BuildDisplay = () => {
       </Table>
     </Container>
   );
-};
+}
 
 export default BuildDisplay;

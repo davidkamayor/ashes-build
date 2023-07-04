@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BuildDisplay from "./components/Main";
+import BuildDisplay from "./components/BuildDisplay";
 
 function App() {
   return (
