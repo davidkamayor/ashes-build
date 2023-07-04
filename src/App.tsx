@@ -1,13 +1,10 @@
 import { useState } from "react";
+import BuildDisplay from "./components/Main";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <BuildDisplay></BuildDisplay>
     </>
   );
 }
