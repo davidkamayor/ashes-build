@@ -9,9 +9,12 @@ import WindowPreview from "./WindowPreview";
 
 function BuildDisplay() {
   const [showPreview, setShowPreview] = useState(false);
+  const [previewPosition, setPreviewPosition] = useState({ x: 0, y: 0 });
 
   function handleMouseEnter() {
     setShowPreview(true);
+    //need to find modern replacment for "event" API
+    setPreviewPosition({ x: event.clientX, y: event.clientY });
   }
 
   function handleMouseLeave() {
@@ -25,13 +28,13 @@ function BuildDisplay() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Category</TableCell>
+              <TableCell>Archetype</TableCell>
               <TableCell>Working</TableCell>
               <TableCell>Untested</TableCell>
             </TableRow>
           </TableHead>
           <TableRow>
-            <TableCell>Solo PvX</TableCell>
+            <TableCell>Fighter</TableCell>
             <TableCell>
               <ul>
                 <li>
@@ -67,7 +70,11 @@ function BuildDisplay() {
           </TableRow>
         </Table>
       </Container>
-      {showPreview ? <WindowPreview></WindowPreview> : ""}
+      {showPreview ? (
+        <WindowPreview position={previewPosition}></WindowPreview>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
